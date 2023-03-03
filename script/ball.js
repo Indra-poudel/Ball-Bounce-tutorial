@@ -4,7 +4,7 @@ class Ball {
     this.width = 40;
     this.background = "red";
     this.ballNode = document.createElement("div");
-    this.speed = 1;
+    this.speed = 5;
   }
 
   render() {

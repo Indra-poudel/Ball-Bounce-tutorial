@@ -24,8 +24,14 @@ class Playground {
       let topPosition = this.ball.ballNode.style.top.split("px")[0];
 
       // playground surface check
-      if (topPosition < this.height - this.ball.height) {
-        topPosition = parseInt(topPosition) + 1;
+      topPosition = parseInt(topPosition) + this.ball.speed;
+
+      if (topPosition === this.height - this.ball.height) {
+        this.ball.speed = -this.ball.speed;
+      }
+
+      if (topPosition === 0) {
+        this.ball.speed = -this.ball.speed;
       }
 
       this.moveBall(topPosition);
